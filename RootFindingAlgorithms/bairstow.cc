@@ -6,16 +6,19 @@ using namespace std;
 double EPSILON = 1;
 
 void sinteticWeirdFormula( double *arr, double *arrOr, int size, double r, double s ) {
+
     arr[size-1] = arrOr[size-1];
     arr[size-2] = arr[size-1] * r + arrOr[size-2];
     
     for ( int i = size - 3; i >= 0; i-- ) {
         arr[i] = ( arr[i + 1] * r ) + ( arr[i + 2] * s ) + arrOr[i];
     }
+
     return;
 }
 
 void bairstow ( double *arrVal, double r, double s, int size ) {
+
     int count = 0;
     
     double arrB[size]; //Initial array B
@@ -23,6 +26,7 @@ void bairstow ( double *arrVal, double r, double s, int size ) {
     double errorR = 0.0, errorS = 0.0;
     
     if ( size <= 2  ) {
+
         cout << "Root: " << -arrVal[0] / arrVal[1] << endl;
         cout << "1 iteration since it has only one root" << endl;
         return;
@@ -33,7 +37,18 @@ void bairstow ( double *arrVal, double r, double s, int size ) {
     
     do {
         sinteticWeirdFormula( arrB, arrVal, size, r, s );
+
+        // for ( int i = 0; i < size; i++ ) {
+        //     cout << arrB[i] << "\t";
+        // }
+
         sinteticWeirdFormula( arrC, arrB, size, r, s );
+        // cout << endl;
+        // for ( int i = 0; i < size; i++ ) {
+        //     cout << arrC[i] << "\t";
+        // }
+
+        // cout << endl;
         
         /** Cramer
          * A = arrC[2]
