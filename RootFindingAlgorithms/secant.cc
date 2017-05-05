@@ -2,10 +2,12 @@
 #include <cmath>
 
 using namespace std;
-double EPSILON = 0.0000000000001;
+double EPSILON = 0.001;
 
 double f (double x) {
-    return exp (-x) - x;
+
+    return x * log10(x) - 10;
+    //return exp (-x) - x;
     //return log (x);
     //return pow(x,2);
     //return (sin(x) + 2 * x - 1);
@@ -22,8 +24,8 @@ void finish( double x, int count ){
 int main() {
     double x0, x1, xn, rb;  //rb -> first root evaluated
     int count = 1;          //counter
-    x0 = 4;                 // -> Entry points 
-    x1 = 1;                 // -> Entry points
+    x0 = 8;                 // -> Entry points 
+    x1 = 9;                 // -> Entry points
     
     //Check entry points
     if ( f(x0) == 0 ) {
@@ -54,7 +56,7 @@ int main() {
         if ( abs( f(xn) ) <= EPSILON ) {
             break;
         }
-        
+        cout<<xn<<endl;
         //Changing points
         x0 = x1;
         x1 = xn;
@@ -62,7 +64,7 @@ int main() {
         count++;
     } while (true);
     
-    finish( x1, count );
+    finish( xn, count );
     
     return 0;
 }

@@ -47,7 +47,7 @@ int main() {
     double a = 0;
     double b = 0.8;
 
-    int n = 8;
+    int n = 2;
     
     x = new double[n + 1];
 

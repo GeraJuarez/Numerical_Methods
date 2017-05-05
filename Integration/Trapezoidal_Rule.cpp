@@ -7,7 +7,8 @@ using namespace std;
 // Method that evaluates the x in a function
 double f( double x  ) {
 
-    return 0.2 + 25 * x - 200 * pow( x, 2 ) + 675 * pow( x, 3 ) - 900 * pow( x, 4 ) + 400 * pow( x, 5 );
+    //return 0.2 + 25 * x - 200 * pow( x, 2 ) + 675 * pow( x, 3 ) - 900 * pow( x, 4 ) + 400 * pow( x, 5 );
+    return exp ( x * x );
 }
 
 void TrapezoidalRule ( int n, double *x ) {
@@ -33,13 +34,14 @@ int main() {
     double *x;
 
     double a = 0;
-    double b = 0.8;
+    double b = 1;
 
-    int n = 6;   //<- Value to be changed
+    int n = 3  //<- Value to be changed
     
     x = new double[n + 1];
 
     double frag = ( b - a ) / n;
+
     cout << "h: " << frag << endl;
 
     for ( int i = 1; i < n; i++ ) {
