@@ -35,11 +35,8 @@ int main() {
 
     double a = 0;
     double b = 1;
-
-    int n = 3  //<- Value to be changed
-    
+    int n = 4;                              //<- Value to be changed  
     x = new double[n + 1];
-
     double frag = ( b - a ) / n;
 
     cout << "h: " << frag << endl;
@@ -52,8 +49,7 @@ int main() {
     x[0] = a;
     x[n] = b;
 
-    n++;
-    TrapezoidalRule( n, x );
+    TrapezoidalRule( n + 1, x );
 
     return 0;
 }
