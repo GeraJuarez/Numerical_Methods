@@ -14,6 +14,7 @@ double f( double x ) {
 
 // Trapezoidal Method
 double trapezoid( double a, double b, int n ) {
+    
     double h = (b - a) / n;
     double sum = 0;
 
@@ -28,6 +29,7 @@ double trapezoid( double a, double b, int n ) {
 }
 
 double romberg_formula( double a, double b, int k ) {
+
     return ( pow(4, k) * b - a ) / ( pow(4, k) - 1 );
 }
 
