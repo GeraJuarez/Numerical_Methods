@@ -35,7 +35,9 @@ int main() {
 
     double a = 0;
     double b = 1;
-    int n = 4;                              //<- Value to be changed  
+    int n;
+    cout << "Enter number of divisions: ";
+    cin >> n;  
     x = new double[n + 1];
     double frag = ( b - a ) / n;
 
