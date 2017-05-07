@@ -3,7 +3,7 @@
 
 using namespace std;
 
-/* Code shared by Arturo Fornes */
+/* Code shared by Arturo Fornes (fornesarturo) */
 /* Slightly modified for my own understanding */
 
 // Method that evaluates the x in a function
